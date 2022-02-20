@@ -1,12 +1,12 @@
 import React from 'react';    
 import '../App.css';
 
-export const Card = () => {
+export const Card = ({ city }) => {
     return (
         <div className="Card">
             <div className='MainInfo'>
                 <img className='Icon' alt="icon" src='http://openweathermap.org/img/wn/10d@2x.png' />
-                <div className='Title'>New Yord</div>
+                <div className='Title'>{city}</div>
                 <div className='Decriprion'>Cloudy</div>
                 <div className='Temperature'>20</div>
             </div>
