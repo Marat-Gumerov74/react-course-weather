@@ -1,9 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import { Input } from './Input';
 
 function App() {
   return (
-    <div className="Main"></div>
+    <div className="Main">
+      <Input />
+    </div>
   );
 }
 
