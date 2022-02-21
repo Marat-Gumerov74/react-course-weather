@@ -1,21 +1,20 @@
-import React from 'react';    
+import React, { useState } from 'react';
 import '../App.css';
 
-export const Input = () => {
-    const currentDate = new Date().toDateString();
-
-    const handleOnChange = (e) => {
-        console.log('e');
-    }
-
-    const handleOnClick = (value) => () => {
-
-    }
-
+export const InputTag = () => {
+    const [inputValue, setinputValue] = useState('empty');
+    const handleOnChange = (e) => {setinputValue(e.target.value)};
+    
     return (
-        <div className="InputWrap">
-            <input className="Input" onChange={handleOnChange}/>
-            <button className="Button" onClick={handleOnClick(currentDate)}>+</button>
-        </div>
+            <input className="Input" onChange={handleOnChange} value={inputValue} />
     );
 };
+
+export const Input = () => (
+    <div className="InputWrap">
+        <InputTag />
+        <Button />
+    </div>
+)
+
+const Button = () => (<button className="Button" >+</button>)
