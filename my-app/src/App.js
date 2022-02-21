@@ -1,19 +1,19 @@
+import React, { useState } from 'react';
+
 import './App.css';
 import { Input } from './Input';
 import { Card } from './Card';
 
 function App() {
-  const cities = ['New York', 'Kyiv', 'London']
+  const [citiesList, setCitiesList] = useState([]);
   return (
     <div className="Main">
-      <Input />
+      <Input setCitiesList={setCitiesList}/>
       <div className='CardList'>
         {
-          cities.map(city =><Card  key={city} city={city}/>)
+          citiesList.map(city =><Card  key={city} city={city}/>)
         }
       </div>
-
-
     </div>
   );
 }

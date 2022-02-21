@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../App.css';
 
-export const InputTag = () => {
-    const [inputValue, setinputValue] = useState('empty');
-    const handleOnChange = (e) => {setinputValue(e.target.value)};
-    
+export const Input = ({ setCitiesList }) => {
+    const [inputValue, setInputValue] = useState('');
+    const inputRef = useRef(null);
+
+    const handleOnClick = () => {
+        if (inputValue.length) {
+            setCitiesList((currentArray) => [...currentArray, inputValue]);
+            setInputValue('');
+            inputRef.current.focus();
+        }
+    }
+
+    const handleOnChange = (e) => setInputValue(e.target.value);
+
     return (
-            <input className="Input" onChange={handleOnChange} value={inputValue} />
-    );
-};
+        <div className="InputWrap">
+            <input className="Input" onChange={handleOnChange} value={inputValue} ref={inputRef} />
+            <button className="Button" onClick={handleOnClick}>+</button>
+        </div>
+    )
+}
 
-export const Input = () => (
-    <div className="InputWrap">
-        <InputTag />
-        <Button />
-    </div>
-)
-
-const Button = () => (<button className="Button" >+</button>)
+const Button = () => (<button >+</button>)
