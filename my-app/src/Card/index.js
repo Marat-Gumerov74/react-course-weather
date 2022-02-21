@@ -5,10 +5,10 @@ import { useWeather } from '../hooks/useWeather';
 
 export const Card = ({ city }) => {
     const data = useWeather(city);
-
+    
     if (!data) return null;
-    const {name, weather, main} = data;
-    const {description, icon } = weather[0];
+    const { name, weather, main } = data;
+    const { description, icon } = weather[0];
     const { temp, humidity, feels_like } = main;
 
     return (

@@ -5,6 +5,5 @@ export const useCitiesList = () => {
     useEffect(() => {
         localStorage.setItem('citiesList', JSON.stringify(citiesList));
     }, [citiesList]);
-
     return [citiesList, setCitiesList];
 }

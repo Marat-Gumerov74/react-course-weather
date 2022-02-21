@@ -9,8 +9,8 @@ function App() {
   const [citiesList, setCitiesList] = useCitiesList();
   return (
     <div className="Main">
-      <Input setCitiesList={setCitiesList}/>
-      <CardList citiesList={citiesList}/>
+      <Input setCitiesList={setCitiesList} />
+      <CardList citiesList={citiesList} />
     </div>
   );
 }
