@@ -55,6 +55,22 @@
   margin-left: 0;
 }
 
+/* .EditCity {
+
+} */
+
+.ActionButtonWrap {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.ActionButton {
+  background: #fff;
+  /* justify-content: flex-end; */
+  border: 1px solid black;
+}
+
 .Maininfo {
   display: flex;
   flex-direction: column;
