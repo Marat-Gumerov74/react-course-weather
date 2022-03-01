@@ -32,6 +32,14 @@
 }
 /* Input finish*/
 /*card start*/
+.Select {
+  margin-bottom: 24px;
+  width: 100%;
+  padding: 4px 8px;
+}
+
+
+
 .CardList {
   display: flex;
 }
